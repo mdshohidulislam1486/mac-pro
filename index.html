@@ -23,20 +23,20 @@
                     <div>
                         <div>
                             <h4>Memory</h4>
-                            <button class="btn btn-outline-dark mb-2">8GB unified memory</button>
-                            <button class="btn btn-outline-dark  mb-2">16GB unified memory</button>
+                            <button id="memory-eight" class="btn btn-outline-dark mb-2">8GB unified memory</button>
+                            <button id="memory-sixteen" class="btn btn-outline-dark  mb-2">16GB unified memory</button>
                         </div>
                         <div>
                             <h4>Storage</h4>
-                            <button class="btn btn-outline-dark mb-2">256GB SSD storage</button>
-                            <button class="btn btn-outline-dark mb-2">512GB SSD storage</button>
-                            <button class="btn btn-outline-dark mb-2">1TB SSD storage</button>
+                            <button id="storage-primary" class="btn btn-outline-dark mb-2">256GB SSD storage</button>
+                            <button id="storage-secondary" class="btn btn-outline-dark mb-2">512GB SSD storage</button>
+                            <button id="storage-finally" class="btn btn-outline-dark mb-2">1TB SSD storage</button>
                         </div>
 
                         <div>
                             <h4>Choose your delivery option</h4>
-                            <button class="btn btn-outline-dark mb-2">Friday, Aug 25 FREE Prime Delivery</button>
-                            <button class="btn btn-outline-dark mb-2">Friday, Aug 21 Delivery charge $20</button>
+                            <button id='free-delivery' class="btn btn-outline-dark mb-2">Friday, Aug 25 FREE Prime Delivery</button>
+                            <button id='payment-delivery' class="btn btn-outline-dark mb-2">Friday, Aug 21 Delivery charge $20</button>
                         </div>
                     </div>
                     <div class="mt-5">
@@ -49,22 +49,22 @@
                                 <hr class="mt-0">
                                 <div class="d-flex  justify-content-between">
                                     <h6>Extra Memory Cost</h6>
-                                    <h6>$<span>0</span></h6>
+                                    <h6>$<span id="extra-memory">0</span></h6>
                                 </div>
                                 <hr class="mt-0">
                                 <div class="d-flex  justify-content-between">
                                     <h6>Extra Storage Cost</h6>
-                                    <h6>$<span>1229</span></h6>
+                                    <h6>$<span id="extra-storage">0</span></h6>
                                 </div>
                                 <hr class="mt-0">
                                 <div class="d-flex  justify-content-between">
                                     <h6>Deliver charge</h6>
-                                    <h6>$<span>1229</span></h6>
+                                    <h6>$<span id='delivery-charge'>0</span></h6>
                                 </div>
                                 <hr class="mt-0 p-1">
                                 <div class="d-flex  justify-content-between">
                                     <h4>Total Price</h4>
-                                    <h4>$<span>1229</span></h4>
+                                    <h4>$<span id='subtotal-price'>1229</span></h4>
                                 </div>
                                 <hr class="mt-0">
                                 <h6>Add Pomo code</h6>
@@ -83,7 +83,8 @@
             <div class="text-center"><h2><span>Total</span>$<span>1299</span></h2></div>
         </div>
     </main>
-
+<!-- cust ttom js file  -->
+<script src="js/script.js"></script>
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
