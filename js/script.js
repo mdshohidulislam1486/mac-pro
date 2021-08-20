@@ -47,9 +47,9 @@ function  subTotalPrice(extraCost){
     const defaultInnerText = defaultSubTotal.innerText
     const deafultToNum = parseFloat(defaultInnerText);
     if(extraCost == 'memory-eight' ){
-        defaultSubTotal.innerText = deafultToNum + 0
+        defaultSubTotal.innerText = 1229
     } else if(extraCost == "memory-sixteen"){
-        defaultSubTotal.innerText = deafultToNum + 180
+        defaultSubTotal.innerText = 1409
     }
      
     
