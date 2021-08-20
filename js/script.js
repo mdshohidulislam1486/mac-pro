@@ -40,12 +40,18 @@ function totalExtraAdded(){
 } */
 
 
-console.log(totalExtraAdded())
 
-function  subTotalPrice(){
-    const defaultSubTotal = document.getElementById('subtotal-price').innerText;
-    const deafultToNum = parseFloat(defaultSubTotal);
-    defaultSubTotal.innerText = deafultToNum +  totalExtraAdded()
+
+function  subTotalPrice(extraCost){
+    const defaultSubTotal = document.getElementById('subtotal-price');
+    const defaultInnerText = defaultSubTotal.innerText
+    const deafultToNum = parseFloat(defaultInnerText);
+    if(extraCost == 'memory-eight' ){
+        defaultSubTotal.innerText = deafultToNum + 0
+    } else if(extraCost == "memory-sixteen"){
+        defaultSubTotal.innerText = deafultToNum + 180
+    }
+     
     
 }
 
@@ -54,15 +60,16 @@ function  subTotalPrice(){
 
 document.getElementById('memory-eight').addEventListener('click', function(){
     memoryUpadate(false);
-    subTotalPrice();
-    totalExtraAdded()
+    subTotalPrice("memory-eight");
+    
+    
     
 })
 
 document.getElementById('memory-sixteen').addEventListener('click', function(){
     memoryUpadate(true)
-    subTotalPrice()
-    totalExtraAdded()
+    subTotalPrice("memory-sixteen")
+    
 })
 document.getElementById('storage-primary').addEventListener('click', function(){
     storageUpdate('primary');
