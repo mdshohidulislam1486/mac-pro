@@ -1,4 +1,5 @@
 
+// function for extra memory 
 function memoryUpadate(isAdding){
     const extraMemory = document.getElementById('extra-memory');
     if(isAdding){
@@ -8,6 +9,7 @@ function memoryUpadate(isAdding){
     }
 }
 
+// function for extra storage 
 function storageUpdate(storage){
     const extraStorage =document.getElementById('extra-storage');
     
@@ -20,6 +22,7 @@ function storageUpdate(storage){
     }
 }
 
+// delivery function 
 function delivaryOptions(isFast){
     const deliveryCharge = document.getElementById('delivery-charge');
     if(isFast){
@@ -30,47 +33,41 @@ function delivaryOptions(isFast){
 }
 
 
+// summation of all extra cost 
 function totalExtraAdded(){
     const extraMemory = document.getElementById('extra-memory').innerText;
     const extraStorage =document.getElementById('extra-storage').innerText;
     const deliveryCharge = document.getElementById('delivery-charge').innerText;
 
-   const totalExtraAdded = parseFloat(extraMemory) + parseFloat(extraStorage) + parseFloat(deliveryCharge);
-    return totalExtraAdded
+    const totalExtraAdded = parseFloat(extraMemory) + parseFloat(extraStorage) + parseFloat(deliveryCharge);
+    return totalExtraAdded;
 }
 
 
-
-
+// summation of total cost  
 function  subTotalPrice(extraCost){
     const subTotalInput = document.getElementById('subtotal-price');
     const totalInput = document.getElementById('final-price');
     if(extraCost == 'memory-eight' || extraCost == "memory-sixteen" || extraCost == "primary" || extraCost == "secondary" || extraCost == "finally" || extraCost == "free-delivery" || extraCost == "payment-delivery"){
-        subTotalInput.innerText = 1229 + totalExtraAdded()
+        subTotalInput.innerText = 1229 + totalExtraAdded();
         totalInput.innerText = 1229 + totalExtraAdded();
     }
 }
 
 
-
-
 document.getElementById('memory-eight').addEventListener('click', function(){
     memoryUpadate(false);
-    subTotalPrice('memory-eight')
-    
-    
-    
+    subTotalPrice('memory-eight');
 })
 
 document.getElementById('memory-sixteen').addEventListener('click', function(){
     memoryUpadate(true);
-    subTotalPrice("memory-sixteen");
-    
+    subTotalPrice("memory-sixteen"); 
 })
+
 document.getElementById('storage-primary').addEventListener('click', function(){
     storageUpdate('primary');
-    subTotalPrice('primary');
-    
+    subTotalPrice('primary'); 
 })
 
 document.getElementById('storage-secondary').addEventListener('click', function(){
@@ -80,14 +77,14 @@ document.getElementById('storage-secondary').addEventListener('click', function(
 
 document.getElementById('storage-finally').addEventListener('click', function(){
     storageUpdate("finally");
-    subTotalPrice('finally');
-    
+    subTotalPrice('finally');  
 })
 
 document.getElementById('free-delivery').addEventListener('click', function(){
     delivaryOptions(false);
     subTotalPrice("free-delivery");
 })
+
 document.getElementById('payment-delivery').addEventListener('click', function(){
     delivaryOptions(true);
     subTotalPrice('payment-delivery');
@@ -101,12 +98,9 @@ document.getElementById('promo-code').addEventListener('click', function(){
 
     const finalPriceInput = document.getElementById('final-price');
     if(promoValue == "stevekaku"){
-        const discount = subTotalInner / 5
+        const discount = subTotalInner / 5;
         const afterDiscountPrice =  subTotalInner - discount;
-        finalPriceInput.innerText = parseInt(afterDiscountPrice); 
+        finalPriceInput.innerText = afterDiscountPrice; 
     }
     promoInput.value = '';
-    
-   
-    
 })
