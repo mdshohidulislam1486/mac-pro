@@ -1,5 +1,6 @@
 
 // function for extra memory 
+
 function memoryUpadate(isAdding){
     const extraMemory = document.getElementById('extra-memory');
     if(isAdding){
@@ -10,6 +11,7 @@ function memoryUpadate(isAdding){
 }
 
 // function for extra storage 
+
 function storageUpdate(storage){
     const extraStorage =document.getElementById('extra-storage');
     
@@ -23,6 +25,7 @@ function storageUpdate(storage){
 }
 
 // delivery function 
+
 function delivaryOptions(isFast){
     const deliveryCharge = document.getElementById('delivery-charge');
     if(isFast){
@@ -34,6 +37,7 @@ function delivaryOptions(isFast){
 
 
 // summation of all extra cost 
+
 function totalExtraAdded(){
     const extraMemory = document.getElementById('extra-memory').innerText;
     const extraStorage =document.getElementById('extra-storage').innerText;
@@ -45,6 +49,7 @@ function totalExtraAdded(){
 
 
 // summation of total cost  
+
 function  subTotalPrice(extraCost){
     const subTotalInput = document.getElementById('subtotal-price');
     const totalInput = document.getElementById('final-price');
@@ -54,6 +59,7 @@ function  subTotalPrice(extraCost){
     }
 }
 
+// memory button 
 
 document.getElementById('memory-eight').addEventListener('click', function(){
     memoryUpadate(false);
@@ -64,6 +70,8 @@ document.getElementById('memory-sixteen').addEventListener('click', function(){
     memoryUpadate(true);
     subTotalPrice("memory-sixteen"); 
 })
+
+// storage button 
 
 document.getElementById('storage-primary').addEventListener('click', function(){
     storageUpdate('primary');
@@ -80,6 +88,8 @@ document.getElementById('storage-finally').addEventListener('click', function(){
     subTotalPrice('finally');  
 })
 
+// delivery button 
+
 document.getElementById('free-delivery').addEventListener('click', function(){
     delivaryOptions(false);
     subTotalPrice("free-delivery");
@@ -89,6 +99,8 @@ document.getElementById('payment-delivery').addEventListener('click', function()
     delivaryOptions(true);
     subTotalPrice('payment-delivery');
 })
+
+// promo code button 
 
 document.getElementById('promo-code').addEventListener('click', function(){
     const subTotalInput = document.getElementById('subtotal-price');
