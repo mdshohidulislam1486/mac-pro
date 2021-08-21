@@ -43,9 +43,11 @@ function totalExtraAdded(){
 
 
 function  subTotalPrice(extraCost){
-    const defaultSubTotal = document.getElementById('subtotal-price');
+    const subTotalInput = document.getElementById('subtotal-price');
+    const totalInput = document.getElementById('final-price');
     if(extraCost == 'memory-eight' || extraCost == "memory-sixteen" || extraCost == "primary" || extraCost == "secondary" || extraCost == "finally" || extraCost == "free-delivery" || extraCost == "payment-delivery"){
-        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+        subTotalInput.innerText = 1229 + totalExtraAdded()
+        totalInput.innerText = 1229 + totalExtraAdded();
     } /* else if(extraCost == "memory-sixteen"){
         defaultSubTotal.innerText = 1229 + totalExtraAdded()
     }else if(extraCost == "primary"){
@@ -102,4 +104,17 @@ document.getElementById('free-delivery').addEventListener('click', function(){
 document.getElementById('payment-delivery').addEventListener('click', function(){
     delivaryOptions(true);
     subTotalPrice('payment-delivery');
+})
+
+document.getElementById('promo-code').addEventListener('click', function(){
+    const subTotalInput = document.getElementById('subtotal-price');
+    const subTotalInner = parseFloat(subTotalInput.innerText)
+    const promoInput = document.getElementById("promo-input").value;
+    const finalPriceInput = document.getElementById('final-price');
+    if(promoInput == "stevekaku"){
+        const discount = subTotalInner / 5
+        const afterDiscountPrice =  subTotalInner - discount;
+        finalPriceInput.innerText = afterDiscountPrice;
+    }
+    
 })
