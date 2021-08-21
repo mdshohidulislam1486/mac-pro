@@ -96,13 +96,14 @@ document.getElementById('payment-delivery').addEventListener('click', function()
 document.getElementById('promo-code').addEventListener('click', function(){
     const subTotalInput = document.getElementById('subtotal-price');
     const subTotalInner = parseFloat(subTotalInput.innerText)
-    let promoInput = document.getElementById("promo-input").value;
+    const promoInput = document.getElementById("promo-input");
+    const promoValue = promoInput.value
+
     const finalPriceInput = document.getElementById('final-price');
-    if(promoInput == "stevekaku"){
+    if(promoValue == "stevekaku"){
         const discount = subTotalInner / 5
         const afterDiscountPrice =  subTotalInner - discount;
         finalPriceInput.innerText = parseInt(afterDiscountPrice); 
-        
     }
     promoInput.value = '';
     
