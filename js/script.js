@@ -54,8 +54,8 @@ function  subTotalPrice(extraCost){
     const subTotalInput = document.getElementById('subtotal-price');
     const totalInput = document.getElementById('final-price');
     if(extraCost == 'memory-eight' || extraCost == "memory-sixteen" || extraCost == "primary" || extraCost == "secondary" || extraCost == "finally" || extraCost == "free-delivery" || extraCost == "payment-delivery"){
-        subTotalInput.innerText = 1229 + totalExtraAdded();
-        totalInput.innerText = 1229 + totalExtraAdded();
+        subTotalInput.innerText = 1299 + totalExtraAdded();
+        totalInput.innerText = 1299 + totalExtraAdded();
     }
 }
 
