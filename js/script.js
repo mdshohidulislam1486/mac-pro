@@ -29,7 +29,7 @@ function delivaryOptions(isFast){
     }
 }
 
-/* 
+
 function totalExtraAdded(){
     const extraMemory = document.getElementById('extra-memory').innerText;
     const extraStorage =document.getElementById('extra-storage').innerText;
@@ -37,22 +37,29 @@ function totalExtraAdded(){
 
    const totalExtraAdded = parseFloat(extraMemory) + parseFloat(extraStorage) + parseFloat(deliveryCharge);
     return totalExtraAdded
-} */
+}
 
 
 
 
 function  subTotalPrice(extraCost){
     const defaultSubTotal = document.getElementById('subtotal-price');
-    const defaultInnerText = defaultSubTotal.innerText
-    const deafultToNum = parseFloat(defaultInnerText);
-    if(extraCost == 'memory-eight' ){
-        defaultSubTotal.innerText = 1229
-    } else if(extraCost == "memory-sixteen"){
-        defaultSubTotal.innerText = 1409
-    }
-     
-    
+    if(extraCost == 'memory-eight' || extraCost == "memory-sixteen" || extraCost == "primary" || extraCost == "secondary" || extraCost == "finally" || extraCost == "free-delivery" || extraCost == "payment-delivery"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    } /* else if(extraCost == "memory-sixteen"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }else if(extraCost == "primary"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }else if(extraCost == "secondary"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }else if(extraCost == "finally"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }else if(extraCost == "free-delivery"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }else if(extraCost == "payment-delivery"){
+        defaultSubTotal.innerText = 1229 + totalExtraAdded()
+    }  
+     */
 }
 
 
@@ -60,35 +67,39 @@ function  subTotalPrice(extraCost){
 
 document.getElementById('memory-eight').addEventListener('click', function(){
     memoryUpadate(false);
-    subTotalPrice("memory-eight");
+    subTotalPrice('memory-eight')
     
     
     
 })
 
 document.getElementById('memory-sixteen').addEventListener('click', function(){
-    memoryUpadate(true)
-    subTotalPrice("memory-sixteen")
+    memoryUpadate(true);
+    subTotalPrice("memory-sixteen");
     
 })
 document.getElementById('storage-primary').addEventListener('click', function(){
     storageUpdate('primary');
-    subTotalPrice();
+    subTotalPrice('primary');
     
 })
 
 document.getElementById('storage-secondary').addEventListener('click', function(){
-    storageUpdate("secondary")
+    storageUpdate("secondary");
+    subTotalPrice('secondary');
 })
 
 document.getElementById('storage-finally').addEventListener('click', function(){
-    storageUpdate("finally")
+    storageUpdate("finally");
+    subTotalPrice('finally');
     
 })
 
 document.getElementById('free-delivery').addEventListener('click', function(){
-    delivaryOptions(false)
+    delivaryOptions(false);
+    subTotalPrice("free-delivery");
 })
 document.getElementById('payment-delivery').addEventListener('click', function(){
-    delivaryOptions(true)
+    delivaryOptions(true);
+    subTotalPrice('payment-delivery');
 })
